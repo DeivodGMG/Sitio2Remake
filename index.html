@@ -1,46 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo ARNGREN</title>
+  <!-- Fuente personalizada para usar en toda la página -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos generales y reseteo */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: #f5f5f5;
+      color: #333;
+    }
 
-    <title>Arngen</title>
-    <style>
+    /* Estilo del encabezado */
+    header {
+      background: #2b2b2b;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #00cc66;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        #Menu_Izquierdo{
-            background-color: rgb(220, 242, 172);
-        }
-        body{
-            background-color: rgb(202, 200, 196);
-        }
-        #Card_Presentation{
-            background-color: rgb(2, 2, 2);
-            color: white;
-            text-align: justify;
-            border-radius: 5px;
-        }
-        h2{
-            text-align: center;
-        }
-    </style>
+    /* Contenedor principal */
+    .container {
+      display: flex;
+    }
+
+    /* Menú lateral */
+    aside {
+      width: 250px;
+      background: #e6e6e6;
+      padding: 1rem;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    aside h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    aside ul {
+      list-style: none;
+    }
+    aside ul li {
+      margin: 0.5rem 0;
+    }
+    aside ul li a {
+      text-decoration: none;
+      color: #2b2b2b;
+    }
+
+    /* Zona de productos */
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .product h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .product p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .product .price {
+      color: #e60000;
+      font-weight: bold;
+    }
+    .product button {
+      background: #00cc66;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .product button:hover {
+      background: #00994d;
+    }
+
+    /* Pie de página */
+    footer {
+      background: #2b2b2b;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <img src="https://png.pngtree.com/element_our/png/20180822/car-logo-design-template-vector-png_62081.jpg" alt="">
-    <h1>Arngen</h1>
-    <div id="Card_Presentation">
-        <p></p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, soluta vero, deleniti rerum sapiente id necessitatibus obcaecati doloremque explicabo voluptate eligendi alias error quisquam totam similique mollitia tempore, repellat modi.</p>
-    </div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam inventore, eum, ea ab architecto officia aut voluptate consequuntur et laborum ex debitis labore minus aperiam omnis repellendus quo. Minus, corporis!</p>
-    <div>
-        <ul>Hola</ul>
-        <ul>How are you?</ul>
-    </div>
-    <h2>Vehiculos electricos</h2>
-    <h2>Vehiculos electricos para ninos</h2>
-    <div id="Menu_Izquierdo">
-        <ul>Electronica</ul>
-        <ul>Vehiculos electricos</ul>
-        <ul>Vehiculos electricos para ninos</ul>
-    </div>
+  <!-- Encabezado con el nombre del sitio y menú de navegación -->
+  <header>
+    <h1>Catálogo ARNGREN</h1>
+    <nav>
+      <a href="#vehiculos">Vehículos</a>
+      <a href="#electricos">Eléctricos</a>
+      <a href="#gadgets">Gadgets</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Contenedor principal que incluye el menú lateral y los productos -->
+  <div class="container">
+
+    <!-- Menú lateral con las categorías del catálogo -->
+    <aside>
+      <h2>Categorías</h2>
+      <ul>
+        <li><a href="#">Autos eléctricos</a></li>
+        <li><a href="#">Scooters y bicis</a></li>
+        <li><a href="#">Mini carros 4x4</a></li>
+        <li><a href="#">ATV / Quads</a></li>
+        <li><a href="#">Helicópteros</a></li>
+        <li><a href="#">Motos eléctricas</a></li>
+        <li><a href="#">RC y juguetes</a></li>
+      </ul>
+    </aside>
+
+    <!-- Sección principal con los productos destacados -->
+    <main>
+      <!-- Cada producto tiene su propia tarjeta con imagen, título, descripción y botón -->
+      <div class="product">
+        <img src="https://arngren.net/fatbike.jpg" alt="Fatbike">
+        <h3>Fatbike Eléctrica 750W</h3>
+        <p>Con batería de 48v. Ideal para montaña o ciudad.</p>
+        <p class="price">€1,299</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/amg.jpg" alt="AMG Eléctrico">
+        <h3>Auto Eléctrico AMG</h3>
+        <p>Vehículo infantil de lujo, con batería y control remoto.</p>
+        <p class="price">€398</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/moped.jpg" alt="Moped">
+        <h3>El-Moped Rojo</h3>
+        <p>Motor eléctrico con batería de litio o plomo.</p>
+        <p class="price">€1,298</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/atv_barn.jpg" alt="ATV Infantil">
+        <h3>Mini ATV para niños</h3>
+        <p>ATV eléctrico para niños con motor 12V.</p>
+        <p class="price">€399</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/jeep.jpg" alt="Jeep Eléctrico">
+        <h3>Mini Jeep 4WD</h3>
+        <p>Con gomas anchas y suspensión. Ideal para aventuras.</p>
+        <p class="price">€998</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/scooter.jpg" alt="Scooter Eléctrico">
+        <h3>Scooter Eléctrico Plegable</h3>
+        <p>Para adultos, autonomía de 40km, motor de 350W.</p>
+        <p class="price">€999</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/elbil.jpg" alt="Elbil Compacto">
+        <h3>Elbil 3 ruedas</h3>
+        <p>Certificado libre, para adultos mayores o movilidad urbana.</p>
+        <p class="price">€3,998</p>
+        <button>Ver más</button>
+      </div>
+      <div class="product">
+        <img src="https://arngren.net/elbil_gron.jpg" alt="Elbil Verde">
+        <h3>Elbil Comarth</h3>
+        <p>2WD/4WD, para 2 a 4 personas, batería duradera.</p>
+        <p class="price">€8,998</p>
+        <button>Ver más</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Pie de página con derechos reservados -->
+  <footer>
+    <p>&copy; 2025 ARNGREN Catálogo. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
